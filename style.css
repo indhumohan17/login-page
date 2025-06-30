@@ -1,120 +1,76 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Custom CSS for Bootstrap Login Page */
 body {
     font-family: 'Inter', sans-serif;
-    height: 100vh;
-    overflow: hidden;
+    background-color: #f8f9fa;
 }
 
-.container {
-    display: flex;
-    height: 100vh;
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    margin: 10px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-}
-
-/* Left Section */
-.left-section {
-    flex: 1;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-}
-
-.login-form {
-    width: 100%;
-    max-width: 400px;
-}
-
+/* Login Form Styles */
 .login-title {
     font-size: 2.5rem;
-    font-weight: 700;
     color: #333;
-    text-align: center;
-    margin-bottom: 0.5rem;
 }
 
 .login-subtitle {
-    color: #666;
-    text-align: center;
-    margin-bottom: 2rem;
     font-size: 0.9rem;
 }
 
-.form {
-    margin-bottom: 1.5rem;
-}
-
-.input-group {
+.input-group-custom {
     position: relative;
-    margin-bottom: 1rem;
 }
 
 .input-icon {
-    position: absolute;
     left: 1rem;
     top: 50%;
     transform: translateY(-50%);
     color: #999;
     font-size: 1rem;
+    z-index: 10;
 }
 
-.input-field {
-    width: 100%;
-    padding: 1rem 1rem 1rem 3rem;
+.custom-input {
+    background-color: #f8f9fa;
     border: none;
-    background: #f8f9fa;
     border-radius: 12px;
+    padding: 1rem 1rem 1rem 3rem;
     font-size: 1rem;
-    outline: none;
     transition: all 0.3s ease;
+    width: 100%;
 }
 
-.input-field:focus {
-    background: #f0f0f0;
+.custom-input:focus {
+    background-color: #f0f0f0;
     box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+    border: none;
+    outline: none;
 }
 
-.input-field::placeholder {
+.custom-input::placeholder {
     color: #999;
 }
 
-.login-btn {
-    width: 100%;
-    padding: 1rem;
+.btn-gradient {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
     border: none;
     border-radius: 12px;
+    color: white;
     font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
 }
 
-.login-btn:hover {
+.btn-gradient:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+    color: white;
 }
 
-.divider {
+/* Divider Styles */
+.divider-container {
     position: relative;
-    text-align: center;
     margin: 2rem 0;
 }
 
-.divider::before {
-    content: '';
+.divider-line {
     position: absolute;
     top: 50%;
     left: 0;
@@ -124,63 +80,42 @@ body {
 }
 
 .divider-text {
-    background: white;
-    padding: 0 1rem;
-    color: #666;
     font-size: 0.9rem;
+    position: relative;
+    z-index: 10;
 }
 
-.social-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
+/* Social Button Styles */
 .social-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    padding: 0.875rem;
-    border: 1px solid #e0e0e0;
     border-radius: 12px;
-    background: white;
-    cursor: pointer;
     transition: all 0.3s ease;
     font-size: 0.9rem;
+    border: 1px solid #e0e0e0;
+    background: white;
 }
 
 .social-btn:hover {
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: white;
+    border-color: #d0d0d0;
 }
 
-.google-btn i {
-    color: #db4437;
-}
-
-.facebook-btn i {
-    color: #4267b2;
-}
-
-/* Right Section */
-.right-section {
-    flex: 1;
+/* Right Section - Gradient Background */
+.gradient-bg {
     background: linear-gradient(135deg, #8B5FBF 0%, #6366F1 50%, #8B5FBF 100%);
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
     overflow: hidden;
+    min-height: 100vh;
 }
 
+/* Abstract Shapes */
 .abstract-shapes {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    pointer-events: none;
 }
 
 .shape {
@@ -214,10 +149,15 @@ body {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-30px) rotate(5deg); }
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+        transform: translateY(-30px) rotate(5deg); 
+    }
 }
 
+/* Content Overlay */
 .content-overlay {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
@@ -229,14 +169,13 @@ body {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     position: relative;
+    z-index: 2;
 }
 
-/* Lightning Icon inside overlay */
+/* Lightning Icon */
 .lightning-icon {
-    position: absolute;
     bottom: 2rem;
-    top: 22.3rem;
-    right: 24.5rem;
+    right: -1.5rem;
     width: 50px;
     height: 50px;
     background: white;
@@ -245,61 +184,71 @@ body {
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 3;
 }
 
 .lightning-icon i {
-    color: #fbbf24;
     font-size: 1.25rem;
+    color: #fbbf24;
 }
 
-.overlay-text {
-    color: white;
+/* Promotional Text */
+.promo-text {
     font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
     line-height: 1.5;
+    margin-bottom: 1.5rem;
+    z-index: 2;
+    position: relative;
 }
 
+/* Woman Image */
 .image-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-}
-
-.woman-image {
-    position: absolute;
     bottom: 0;
     right: 0;
     left: 0;
     margin: auto;
-    width: 200%;
-    max-height: 100%;
-    object-fit: cover;
-    max-width: 680px;
-    height: auto;
-    margin-top: -14.6rem;
-    margin-right: -5rem;
-    border-radius: 16px;
-   
+    z-index: 1;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
+.woman-image {
+    width: 200%;
+    max-width: 680px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-top: -14.6rem;
+    margin-right: -5rem;
+}
+
+/* Container rounded corners */
+.rounded-4 {
+    border-radius: 1.5rem !important;
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 1199.98px) {
+    .content-overlay {
+        max-width: 380px;
+        padding: 2.2rem;
+    }
+    
+    .promo-text {
+        font-size: 1.6rem;
+    }
+    
+    .woman-image {
+        max-width: 600px;
+        margin-top: -13rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .row {
         flex-direction: column;
-        overflow-y: auto;
-        margin: 5px;
-        border-radius: 15px;
     }
     
-    .left-section,
-    .right-section {
-        flex: none;
-        min-height: 50vh;
-    }
-    
-    .login-form {
-        max-width: 350px;
+    .gradient-bg {
+        min-height: 60vh;
     }
     
     .login-title {
@@ -309,83 +258,205 @@ body {
     .content-overlay {
         max-width: 350px;
         padding: 2rem;
+        height: auto;
+        min-height: 400px;
+        margin: 2rem auto;
     }
     
-    .overlay-text {
+    .promo-text {
         font-size: 1.5rem;
+        margin-bottom: 2rem;
+        
     }
     
     .woman-image {
         max-width: 380px;
         margin-top: -10rem;
         margin-right: 0;
-        margin-left: 0;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        margin: auto;
+        width: 150%;
     }
     
     .lightning-icon {
         bottom: 1.5rem;
-        left: 1.5rem;
+        right: 1.5rem;
         width: 45px;
         height: 45px;
     }
+    
+    .col-lg-6:first-child {
+        order: 1;
+    }
+    
+    .col-lg-6:last-child {
+        order: 2;
+    }
 }
 
-@media (max-width: 480px) {
-    .left-section,
-    .right-section {
+@media (max-width: 767.98px) {
+    .container-fluid {
         padding: 1rem;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
+    }
+    
+    .login-title {
+        font-size: 1.8rem;
+    }
+    
+    .custom-input {
+        padding: 0.9rem 0.9rem 0.9rem 2.8rem;
+        font-size: 0.95rem;
+    }
+    
+    .input-icon {
+        left: 0.9rem;
+        font-size: 0.9rem;
+    }
+    
+    .btn-gradient {
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .content-overlay {
+        max-width: 520px;
+        padding: 1.8rem;
+        min-height: 550px;
+    }
+    
+    .promo-text {
+        font-size: 2.5rem;
 
-        /* Add any additional styles here */
-        .woman-image {
-            max-width: 100%;
-            margin-top: -10rem;
-            width: 200%;
-            margin-right: 0;
-            margin-left: 0;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            margin: auto;
-        }
     }
     
-    .login-form {
-        max-width: 100%;
+    .woman-image {
+        max-width: 700px;
+        margin-top: -8rem;
+        margin-right: -5rem;
+        width: 200%;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .container-fluid {
+        padding: 0.5rem;
     }
     
-    .social-buttons {
-        gap: 0.5rem;
+    .row {
+        margin: 0;
     }
     
-    .social-btn {
-        padding: 0.75rem;
+    .col-lg-6 {
+        padding: 1.5rem;
+    }
+    
+    .login-title {
+        font-size: 1.6rem;
+    }
+    
+    .login-subtitle {
         font-size: 0.85rem;
     }
     
     .content-overlay {
         padding: 1.5rem;
+        min-height: 320px;
+        max-width: 280px;
     }
     
-    .overlay-text {
-        font-size: 1.25rem;
+    .promo-text {
+        font-size: 1.1rem;
+        line-height: 1.4;
     }
+    
     .woman-image {
-        max-width: 250px;
-        margin-top: -8rem;
-        margin-right: 0;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        margin: auto;
+        max-width: 220px;
+        margin-top: -6rem;
+        width: 110%;
     }
+    
+    .social-btn {
+        padding: 0.7rem;
+        font-size: 0.85rem;
+    }
+    
+    .lightning-icon {
+        width: 40px;
+        height: 40px;
+        bottom: 1rem;
+        right: 1rem;
+    }
+    
+    .lightning-icon i {
+        font-size: 1rem;
+    }
+    
+    .shape-1 {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .shape-2 {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .shape-3 {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 375px) {
+    .container-fluid {
+        padding: 0.25rem;
+    }
+    
+    .col-lg-6 {
+        padding: 1rem;
+    }
+    
+    .login-title {
+        font-size: 1.4rem;
+    }
+    
+    .content-overlay {
+        max-width: 260px;
+        padding: 1.2rem;
+        min-height: 280px;
+    }
+    
+    .promo-text {
+        font-size: 1rem;
+    }
+    
+    .woman-image {
+        max-width: 180px;
+        margin-top: -5rem;
+    }
+    
+    .custom-input {
+        padding: 0.8rem 0.8rem 0.8rem 2.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .btn-gradient {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Smooth transitions for all responsive changes */
+* {
+    transition: all 0.3s ease;
+}
+
+/* Ensure images are always responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Prevent horizontal scrolling */
+body, html {
+    overflow-x: hidden;
 }
